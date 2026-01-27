@@ -110,6 +110,7 @@ export default function App() {
   return (
     <div className="app">
       <h1>Expense Tracker</h1>
+      <h4>Abdulkadir Ahmed Kabah</h4>
 
       {/* Summary cards (single column) */}
       <div className="summery-cards">
