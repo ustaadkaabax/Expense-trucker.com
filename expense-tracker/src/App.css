@@ -216,6 +216,7 @@ h1 {
 
 /* ===== Transactions ===== */
 .transactions {
+  width: 100%;
   background: var(--card);
   padding: 22px;
   border-radius: var(--radius);
@@ -238,13 +239,15 @@ h1 {
 }
 
 /* Table wrapper for scroll on small screens */
-.table-wrap {
+.app .table-wrap {
   width: 100%;
-  overflow-x: auto;
+  max-width: 90%;
+  overflow: auto;
 }
 
-table {
+.app table {
   width: 100%;
+  overflow: hidden;
   border-collapse: collapse;
   min-width: 600px; /* smaller min-width for mobile */
 }
@@ -301,10 +304,12 @@ tbody tr:hover {
   }
 
   .app h1 {
-    font-size: 1.5rem; /* fluid heading */
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 1.5rem;
+    box-shadow: 2px 10px 250px rgba(0, 0, 0, 0.6);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     background: linear-gradient(to bottom, rgb(255, 166, 0), rgb(198, 129, 3), rgb(255, 60, 0));
     padding: 10px;
+    color: black;
     border-radius: 25px;
   }
   .app h4 {
@@ -312,13 +317,30 @@ tbody tr:hover {
     margin-bottom: 16px;
     color: white;
     background: linear-gradient(to bottom, rgb(51, 0, 255), rgb(120, 3, 198), rgb(144, 0, 255));
-    padding: 8px;
-    border-radius: 12px;
-    font-size: 1.2rem;
+    padding: 10px;
+    border-radius: 25px;
+    font-size: 1rem;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
   }
-  .app .summery-cards {
-    grid-template-columns: 1fr; /* single column */
+  .app #summary-cards {
+    grid-template-columns: 1fr;
+  }
+   .app #summary-cards #balance-card h3{
+      color: black;
+    }
+    .app #summary-cards #income-card h3{
+      color: green;
+      p{
+        color: black;
+      }
+    }
+    .app #summary-cards #expenses-card h3{ 
+      color: red;
+  }
+  
+  .app #summary-cards div {
+    padding: 14px;
+    background: linear-gradient(to bottom, rgb(229, 227, 224), rgb(253, 253, 253));
   }
 
   .form-row {
@@ -333,21 +355,46 @@ tbody tr:hover {
 
   .btn-primary,
   .btn-secondary {
-    width: 100%;
+    min-width: unset;
   }
 
-  .actions {
-    flex-direction: column;
+  .app .actions {
+    display: flex;
+    flex-direction: row;
     align-items: stretch;
+    padding: 2px;
+  }
+  .app .actions .btn-primary,
+  .app .actions .btn-secondary {
+    padding: 4px 4px;
+    font-size: 8px;
+  }
+  .app .transactions {
+    min-width: fit-content;
+    h2{
+      font-size: 1rem;
+      color: white;
+    }
+    background:  linear-gradient(to bottom, rgb(51, 0, 255), rgb(120, 3, 198), rgb(144, 0, 255));
+    background-color:;
+    max-width: 100%;
+    padding: 16px;
+  }
+  .app .table-wrap {
+    width: 100%;
+    max-width: 100%;
   }
 
-  table {
-    min-width: 100%; /* table fits mobile screen */
+  .app table {
+    min-width: 100%;
+    max-width: 200px; /* table fits mobile screen */
   }
 
-  th,
-  td {
-    font-size: 12px;
-    padding: 8px;
+  .app table th,
+  .app table td {
+    font-size: 7px;
+    color: white;
+    font-weight: bold;
+    padding: 8px 4px;
   }
 }

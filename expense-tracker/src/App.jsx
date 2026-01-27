@@ -113,20 +113,20 @@ export default function App() {
       <h4>Abdulkadir Ahmed Kabah</h4>
 
       {/* Summary cards (single column) */}
-      <div className="summery-cards">
-        <div className="card-balance">
+      <div className="summery-cards" id="summary-cards">
+        <div className="card-balance" id="balance-card">
           <h3>Total Balance</h3>
-          <p id="balance">${summary.balance.toFixed(2)}</p>
+          <p id="balance" style={{ color: "orange" }}>${summary.balance.toFixed(2)}</p>
         </div>
 
-        <div className="card-income">
+        <div className="card-income" id="income-card">
           <h3>Total Income</h3>
-          <p id="income">${summary.income.toFixed(2)}</p>
+          <p id="income" style={{ color: "green" }}>${summary.income.toFixed(2)}</p>
         </div>
 
-        <div className="card-expenses">
+        <div className="card-expenses" id="expenses-card">
           <h3>Total Expenses</h3>
-          <p id="expenses">${summary.expenses.toFixed(2)}</p>
+          <p id="expenses" style={{ color: "red" }}>${summary.expenses.toFixed(2)}</p>
         </div>
       </div>
 
